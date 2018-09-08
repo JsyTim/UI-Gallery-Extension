@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script type="text/javascript">
+
+	function getMeta(url, _thisCell, _coordRes, _widRes) {
+	    let img = new Image();
+	    img.onload = function () {
+	        let width = _thisCell.find('.image--large')[0].clientWidth;
+	        let ratio = width / this.width;
+	        let _left = parseInt(_coordRes[0]) * ratio +10;
+	        let _top = parseInt(_coordRes[1]) * ratio -5;     
+	        let _width = parseInt(_widRes[0]) * ratio+10 ;
+	        let _height = parseInt(_widRes[1]) * ratio+10;
+
+	        let styles = {
+	            position: 'absolute',
+	            left: _left,
+	            top: _top,
+	            width: _width,
+	            height: _height,
+	            border: "5px solid red"
+	        };
+	        //_thisCell.find('#highlight-box').css(styles)
+	        $('#highlight-box').css(styles);
+	    };
+	    img.src = url;
+	}
+
+	function addHtml(){
+		let html = "";
+		/*
+		heightWithName[j][1] = sURLVariables[1]
+		urlAdd = sURLVariables[2]
+		similarAdd = sURLVariables[3]
+		widgets[j].url = sURLVariables[4]
+		widgets[j].application_name = sURLVariables[5]
+		widgets[j].package_name	= sURLVariables[6]
+		widgets[j].category = sURLVariables[7]
+		widgets[j].text = sURLVariables[8]
+		widgets[j].widget_class = sURLVariables[9]
+		widgets[j].coordinates['from'] = sURLVariables[10]
+		widgets[j].coordinates['to'] = sURLVariables[11]
+		btnSize = sURLVariables[12]
+		widgets[j].color = sURLVariables[13]
+		widgets[j].downloads = sURLVariables[14]
+		*/
+
+		html += '<div class="modal-body row";> ';
+	    html += '<div class="col-md-6 ">';
+	    html += '<div id="highlight-box">';
+	    html += '</div>'
+		html += '<a href="./search/'+ sURLVariables[6]+ '/' + sURLVariables[3] + '">';
+		html += '<img class = "image--large" src="https://storage.googleapis.com/ui-collection-gcs/' + sURLVariables[2] + '" style="max-height:640px;"/></a>';
+		html +=	'</div>';
+		html += '<div class="col-md-6 align-self-center;">';
+		html += '<table cellpadding="15" cellspacing="0" border="0" class="app-detail ">';
+		html += '<tbody>';
+		html += '<tr>';
+		html +=	'   	<td><b>Application: </b></td>';
+		html +=	'    	<td><a href="' + sURLVariables[4] + '">' + sURLVariables[5] + '</a>';
+		html +=	'    	</td>';
+		html +=	'    </tr>';
+		html +=	'    	<td><b>Package: </b></td>';
+		html +=	'	    	<td style="word-break:break-all"> ' + sURLVariables[6] + '</td>'; 
+		html +=	'	    <tr>';
+		html +=	'	    	<td><b>Category:</b></td>';
+		html +=	'	    	<td>' + sURLVariables[7] + '</td>';
+		html +=	'	    </tr>';
+		html +=	'	    <tr>';
+		html +=	'	    	<td><b>Text: </b></td>';
+		if(sURLVariables[8] == 0){
+			html +=	'	    	<td>' + " " + '</td>';
+		}else{
+			html +=	'	    	<td>' + sURLVariables[8] + '</td>';
+		}
+		html +=	'	    </tr>';
+		html +=	'	    <tr>';
+		html +=	'	    	<td><b>Class: </b></td>';
+		html +=	'	    	<td>' + sURLVariables[9] + '</td>';
+		html +=	'	    </tr>';
+		html +=	'	    <tr>';
+		html +=	'	    	<td><b>Coordinates:&emsp;</b></td>';
+		html +=	'	    	<td class="coords">[' + sURLVariables[10] + '][' + sURLVariables[11] + ']</td>';
+		html +=	'	    </tr>';
+		html +=	'	    <tr>';
+		html +=	'	    	<td><b>Size:</b></td>';
+		html +=	'	    	<td class="widSize">' + sURLVariables[12] + '</td>';
+		html +=	'	    </tr>';
+		html +=	'	    <tr>';
+		html +=	'	    	<td><b>Color: </b></td>';
+		html +=	'	    	<td>' + sURLVariables[13] + '</td>';
+		html +=	'	    </tr>';
+		html +=	'	    <tr>';
+		html +=	'	    	<td><b>Downloads:</b></td>';
+		html +=	'	    	<td>' + sURLVariables[14] + '</td>';
+		html +=	'	    </tr>';	
+		html += '</tbody>';
+		html +=	'    </table>';
+		html +=	'<span style = "color:white"><br>We only annotate the selected UI elements in the image</br></span>';
+		html +=	'</div>';
+		html +=	'</div>';
+		html +=	'</div>';
+
+		$(".container").append(html);
+	}
+
+	function getUrlParameter() { //解析URL
+		var sURL = decodeURIComponent(window.location.href);	
+		sURLVariables = sURL.split("#");
+
+		console.log(sURLVariables);
+		addHtml();
+		var coordRes = [];
+		var widRes = [];
+		coordRes = sURLVariables[10].split(',');
+		widRes = sURLVariables[12].split('x');
+		let imageUrl = 'https://storage.googleapis.com/ui-collection-gcs/' + sURLVariables[2];
+		getMeta(imageUrl, $(".container"), coordRes, widRes);
+		}
+	
+	$(window).on('load', function(){
+		getUrlParameter();
+	})
+	</script>
+</head>
+<body>	
+	<div class= "container" style="background-color: black ">
+
+	</div>
+</body>
+</html>

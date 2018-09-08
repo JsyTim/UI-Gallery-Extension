@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Mobile UI Gallery, a repository of widgets taken from Google Play Store.">
+    <meta name="keywords"
+          content="mobile, mobile ui, mobile widgets, widget, widgets, mobile application, android, android widget, android widgets, android ui, ui">
+    <meta name="author" content="">
+
+    <title><%= title %></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117332758-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-117332758-2');
+    </script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Mobile UI Gallery</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <!--<li class="nav-item active">
+                    <a class="nav-link" href="/"">Home
+                    <span class="sr-only">(current)</span>
+                    </a>
+                </li>-->
+                 <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search">Search</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="/compare">Compare</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container-fluid">
+    <h2 class="my-4 text-center text-lg-left">A gallery made for Android developers</h2>
+    <div>A collection of 32,569 UI components coming from different applications and screenshots from Google Play Store.
+        In our repository, we make it simple for developers to use it by providing details of the application screenshot
+        as
+        well as a <b>red-box</b> of where the widget is located at. Duplicate or very similar UI components in the
+        screenshots are excluded for the diversity of design kit. We have several examples of such widgets listed
+        below.<br><br>
+        <p>To search for more widgets or particular classes, please click on the search button below:</p>
+    </div>
+    <br>
+    <div class="text-center">
+        <button type="button" class="btn-lg btn-primary" onclick="location.href='/search'">Search</button>
+    </div>
+
+    <hr/>
+
+    <% for (let j = 0; j < chosenArr.length; j++) { %>
+    <h3 class="my-4 text-center text-lg-left"><%= chosenArr[j] %></h3>
+    <section class="image-grid">
+
+        <% for(let i = 0; i < widgets[chosenArr[j]].length; i++) {
+            var btnSize = widgets[chosenArr[j]][i].dimensions['width'] + 'x' + widgets[chosenArr[j]][i].dimensions['height']; %>
+        <span class="anchor" id="#expand-jump-<%= 10 * (j - 1) + i %>"></span>
+        <article class="image__cell is-collapsed">
+            <div class="image--basic" style="height:100px">
+                <a href="#expand-jump-<%= 10 * (j - 1) + i %>">
+                    <img class="basic__img"
+                         src="https://storage.googleapis.com/ui-collection-gcs/widgets/<%= widgets[chosenArr[j]][i].widget_class + '/' + widgets[chosenArr[j]][i].name + '.jpeg' %>"
+                         style="max-height:100px;"/>
+                </a>
+            </div>
+            <!--
+            <div class="arrow--up"></div>
+            <div class="image--expand">
+                <div class="modal-body row">
+                    <div class="col-md-5">
+                        <div id="highlight-box"></div>
+                        <% let screenSrc = widgets[chosenArr[j]][i].src.split('/')
+                            let urlAdd = '', similarAdd = '';
+                            if (screenSrc[1] === 'mnt') {
+                                urlAdd = screenSrc[3] + '/' + screenSrc[4] + '/' + screenSrc[7]
+                                similarAdd = screenSrc[7]
+                            } else if (screenSrc[0] === 'play_store_screenshots') {
+                                urlAdd = widgets[chosenArr[j]][i].src;
+                                similarAdd = screenSrc[-1];
+                            }
+                        %>
+                        <a href="./search/<%= widgets[chosenArr[j]][i].package_name %>/<%= similarAdd %>">
+                            <img class="image--large"
+                                 src="https://storage.googleapis.com/ui-collection-gcs/<%= urlAdd %>.jpeg"
+                                 style="max-height:640px"/>
+                        </a>
+                    </div>
+                    <div class="col-md-5 align-self-center">
+                        <table cellpadding="0" cellspacing="0" border="0" class="app-detail">
+                            <tr>
+                                <td><b>Application: </b></td>
+                                <td><a href="<%= widgets[chosenArr[j]][i].url %>">
+                                        <% if (!widgets[chosenArr[j]][i].application_name) { %>
+                                        Non-ascii
+                                        <% } else { %>
+                                        <%= widgets[chosenArr[j]][i].application_name %>
+                                        <% } %>
+                                    </a></td>
+                            </tr>
+                            <tr>
+                                <td><b>Package: </b></td>
+                                <td><%= widgets[chosenArr[j]][i].package_name %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Category:</b></td>
+                                <td><%= widgets[chosenArr[j]][i].category %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Text: </b></td>
+                                <td><%= widgets[chosenArr[j]][i].text %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Class: </b></td>
+                                <td><%= widgets[chosenArr[j]][i].widget_class %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Coordinates:&emsp;</b></td>
+                                <td class="coords">
+                                    [<%= widgets[chosenArr[j]][i].coordinates['from'] %>]
+                                    [<%= widgets[chosenArr[j]][i].coordinates['to'] %>]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Size:&emsp;</b></td>
+                                <td class="widSize"><%= btnSize %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Color: </b></td>
+                                <td> <%= widgets[chosenArr[j]][i].color %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Downloads:</b></td>
+                                <td><%= widgets[chosenArr[j]][i].downloads %></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="height: 10px !important;"></td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="2"><i>We only annotate the selected UI elements in the
+                                        image.</i></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <a href="#close-jump-<%= 10 * (j - 1) + i %>" class="expand__close"></a>
+                    </div>
+                </div>
+            </div>-->
+            
+        </article>
+        <% } %>
+    </section>
+    <br>
+    <% } %>
+
+</div>
+<!-- /.container -->
+<br>
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Mobile UI Gallery 2018</p>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<script>
+    /*
+    $(document).ready(function () {
+        let $cell = $('.image__cell');
+
+        $cell.find('.image--basic').off('click').on('click', function () {
+            let $thisCell = $(this).closest('.image__cell');
+
+            if ($thisCell.hasClass('is-collapsed')) {
+                $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed');
+                $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+                let coords = $thisCell.find('.coords').html();
+                let coordReg = /\[(\d+),(\d+)]/g;
+                let coordRes = coordReg.exec(coords);
+                let widSize = $thisCell.find('.widSize').html();
+                let widReg = /(\d+)x(\d+)/g;
+                let widRes = widReg.exec(widSize);
+
+                let width = $thisCell.find('.image--large')[0].clientWidth;
+                let ratio = width / 800;
+                let _left = parseInt(coordRes[1]) * ratio + 10;
+                let _top = parseInt(coordRes[2]) * ratio - 5;
+                let _height = parseInt(widRes[2]) * ratio;
+                let _width = parseInt(widRes[1]) * ratio;
+
+                let styles = {
+                    position: 'absolute',
+                    left: _left,
+                    top: _top,
+                    width: _width,
+                    height: _height,
+                    border: "5px solid red"
+                };
+                $thisCell.find('#highlight-box').css(styles)
+            } else {
+                $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+            }
+        });
+
+        $cell.find('.expand__close').off('click').on('click', function () {
+            let $thisCell = $(this).closest('.image__cell');
+            $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+        });
+    });*/
+</script>
+</body>
+</html>
