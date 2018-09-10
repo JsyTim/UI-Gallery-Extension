@@ -53,10 +53,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/search">Search</a>
+                    <a class="nav-link" href="
+                    /search?btnType=RadioButton&color=All&category=All&sortType=appDownloads&text=&width=0%3B800&height=0%3B1280&page=1">Search
+                    </a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="/compare">Compare</a>
+                    <a class="nav-link active" href="/compare?btnType=All&color=All&category=All&DeveloperOneName=AI_Factory_Limited&DeveloperTwoName=GIOSIS_PTE._LTD.&sortType=appDownloads&text=&width=0%3B800&height=0%3B1280&page=1">Compare</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About</a>
@@ -82,7 +84,7 @@
     </div>
     <br>
     <div class="text-center">
-        <button type="button" class="btn-lg btn-primary" onclick="location.href='/search'">Search</button>
+        <button type="button" class="btn-lg btn-primary" onclick="location.href='/search?btnType=RadioButton&color=All&category=All&sortType=appDownloads&text=&width=0%3B800&height=0%3B1280&page=1'">Search</button>
     </div>
 
     <hr/>
@@ -102,89 +104,7 @@
                          style="max-height:100px;"/>
                 </a>
             </div>
-            <!--
-            <div class="arrow--up"></div>
-            <div class="image--expand">
-                <div class="modal-body row">
-                    <div class="col-md-5">
-                        <div id="highlight-box"></div>
-                        <% let screenSrc = widgets[chosenArr[j]][i].src.split('/')
-                            let urlAdd = '', similarAdd = '';
-                            if (screenSrc[1] === 'mnt') {
-                                urlAdd = screenSrc[3] + '/' + screenSrc[4] + '/' + screenSrc[7]
-                                similarAdd = screenSrc[7]
-                            } else if (screenSrc[0] === 'play_store_screenshots') {
-                                urlAdd = widgets[chosenArr[j]][i].src;
-                                similarAdd = screenSrc[-1];
-                            }
-                        %>
-                        <a href="./search/<%= widgets[chosenArr[j]][i].package_name %>/<%= similarAdd %>">
-                            <img class="image--large"
-                                 src="https://storage.googleapis.com/ui-collection-gcs/<%= urlAdd %>.jpeg"
-                                 style="max-height:640px"/>
-                        </a>
-                    </div>
-                    <div class="col-md-5 align-self-center">
-                        <table cellpadding="0" cellspacing="0" border="0" class="app-detail">
-                            <tr>
-                                <td><b>Application: </b></td>
-                                <td><a href="<%= widgets[chosenArr[j]][i].url %>">
-                                        <% if (!widgets[chosenArr[j]][i].application_name) { %>
-                                        Non-ascii
-                                        <% } else { %>
-                                        <%= widgets[chosenArr[j]][i].application_name %>
-                                        <% } %>
-                                    </a></td>
-                            </tr>
-                            <tr>
-                                <td><b>Package: </b></td>
-                                <td><%= widgets[chosenArr[j]][i].package_name %></td>
-                            </tr>
-                            <tr>
-                                <td><b>Category:</b></td>
-                                <td><%= widgets[chosenArr[j]][i].category %></td>
-                            </tr>
-                            <tr>
-                                <td><b>Text: </b></td>
-                                <td><%= widgets[chosenArr[j]][i].text %></td>
-                            </tr>
-                            <tr>
-                                <td><b>Class: </b></td>
-                                <td><%= widgets[chosenArr[j]][i].widget_class %></td>
-                            </tr>
-                            <tr>
-                                <td><b>Coordinates:&emsp;</b></td>
-                                <td class="coords">
-                                    [<%= widgets[chosenArr[j]][i].coordinates['from'] %>]
-                                    [<%= widgets[chosenArr[j]][i].coordinates['to'] %>]
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><b>Size:&emsp;</b></td>
-                                <td class="widSize"><%= btnSize %></td>
-                            </tr>
-                            <tr>
-                                <td><b>Color: </b></td>
-                                <td> <%= widgets[chosenArr[j]][i].color %></td>
-                            </tr>
-                            <tr>
-                                <td><b>Downloads:</b></td>
-                                <td><%= widgets[chosenArr[j]][i].downloads %></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="height: 10px !important;"></td>
-                            </tr>
-                            <tr>
-                                <td align="center" colspan="2"><i>We only annotate the selected UI elements in the
-                                        image.</i></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div>
-                        <a href="#close-jump-<%= 10 * (j - 1) + i %>" class="expand__close"></a>
-                    </div>
-                </div>
-            </div>-->
+            
             
         </article>
         <% } %>
@@ -208,49 +128,7 @@
         crossorigin="anonymous"></script>
 
 <script>
-    /*
-    $(document).ready(function () {
-        let $cell = $('.image__cell');
-
-        $cell.find('.image--basic').off('click').on('click', function () {
-            let $thisCell = $(this).closest('.image__cell');
-
-            if ($thisCell.hasClass('is-collapsed')) {
-                $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed');
-                $thisCell.removeClass('is-collapsed').addClass('is-expanded');
-                let coords = $thisCell.find('.coords').html();
-                let coordReg = /\[(\d+),(\d+)]/g;
-                let coordRes = coordReg.exec(coords);
-                let widSize = $thisCell.find('.widSize').html();
-                let widReg = /(\d+)x(\d+)/g;
-                let widRes = widReg.exec(widSize);
-
-                let width = $thisCell.find('.image--large')[0].clientWidth;
-                let ratio = width / 800;
-                let _left = parseInt(coordRes[1]) * ratio + 10;
-                let _top = parseInt(coordRes[2]) * ratio - 5;
-                let _height = parseInt(widRes[2]) * ratio;
-                let _width = parseInt(widRes[1]) * ratio;
-
-                let styles = {
-                    position: 'absolute',
-                    left: _left,
-                    top: _top,
-                    width: _width,
-                    height: _height,
-                    border: "5px solid red"
-                };
-                $thisCell.find('#highlight-box').css(styles)
-            } else {
-                $thisCell.removeClass('is-expanded').addClass('is-collapsed');
-            }
-        });
-
-        $cell.find('.expand__close').off('click').on('click', function () {
-            let $thisCell = $(this).closest('.image__cell');
-            $thisCell.removeClass('is-expanded').addClass('is-collapsed');
-        });
-    });*/
+  
 </script>
 </body>
 </html>

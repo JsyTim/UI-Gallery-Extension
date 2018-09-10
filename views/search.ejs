@@ -56,12 +56,13 @@
                     </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/search">Search
+                    <a class="nav-link" href="
+                    /search?btnType=RadioButton&color=All&category=All&sortType=appDownloads&text=&width=0%3B800&height=0%3B1280&page=1">Search
                         <span class="sr-only">(query.page)</span>
                     </a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="/compare">Compare</a>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/compare?btnType=All&color=All&category=All&DeveloperOneName=AI_Factory_Limited&DeveloperTwoName=GIOSIS_PTE._LTD.&sortType=appDownloads&text=&width=0%3B800&height=0%3B1280&page=1">Compare</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About</a>
@@ -85,11 +86,6 @@
             <div class="row">
 
                 <div class="form-group form-inline">
-                    <fieldset>
-                        <label class="badge">Text Filter</label>
-                        <input type="text" class="form-control" id="text" name="text" value="<%= query.text %>"
-                               placeholder="Text Filter">
-                    </fieldset>
                     <fieldset>
                         <label class="badge">Widget Class</label>
                         <select class="custom-select form-control" id="btnType" name="btnType">
@@ -169,6 +165,11 @@
                             <% }
                             } %>
                         </select>
+                    </fieldset>
+                     <fieldset>
+                        <label class="badge">Text Filter</label>
+                        <input type="text" class="form-control" id="text" name="text" value="<%= query.text %>"
+                               placeholder="Text Filter">
                     </fieldset>
                 </div>
             </div>

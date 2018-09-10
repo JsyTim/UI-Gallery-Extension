@@ -56,11 +56,13 @@
                     <a class="nav-link" href="/">Home
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/search">Search</a>
+                 <li class="nav-item">
+                    <a class="nav-link" href="
+                    /search?btnType=RadioButton&color=All&category=All&sortType=appDownloads&text=&width=0%3B800&height=0%3B1280&page=1">Search
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/compare">Compare</a>
+                <li class="nav-item active">
+                    <a class="nav-link active" href="/compare?btnType=All&color=All&category=All&DeveloperOneName=AI_Factory_Limited&DeveloperTwoName=GIOSIS_PTE._LTD.&sortType=appDownloads&text=&width=0%3B800&height=0%3B1280&page=1">Compare</a>
                     <span class="sr-only">(current)</span>
                 </li>
                 <li class="nav-item">
@@ -87,12 +89,6 @@
         <form name="compare" method="get" id="myform" action="/compare" class="panel-body">
             <div class="row">
                 <div class="form-group form-inline">
-                    <fieldset>
-                        <label class="badge">Text Filter</label>
-                        <input type="text" class="form-control" id="text" name="text" value="<%= query.text %>"
-                               placeholder="Text Filter">
-                    </fieldset>
-                
                     <fieldset>
                         <label class="badge">Widget Class</label>
                         <select class="custom-select form-control" id="btnType" name="btnType">
@@ -159,22 +155,21 @@
                             <option value="Empty">--PLEASE SELECT--</option>
                             <option value="AI_Factory_Limited">AI_Factory_Limited</option>
                             <option value="GIOSIS_PTE._LTD.">GIOSIS_PTE._LTD.</option>
-                            <option value="JRJ_Unlimited">JRJ_Unlimited</optgroup>
+                            <option value="JRJ_Unlimited">JRJ_Unlimited</option>
                             <option value="SMSROBOT_LTD">SMSROBOT_LTD</option>
                             <option value="NAVER_Corp.">NAVER_Corp.</option>
-                            <option value="Corcanoe">Corcanoe</optiton>
-                            <option value="Gemego_Ltd">Gemego_Ltd</optiton>
-                            <option value="SMSROBOT_LTD">SMSROBOT_LTD</optiton>
-                            <option value="Mirco_Bettelini">Mirco_Bettelini</optiton>
-                            <option value="Boreumdal_Lab">Boreumdal_Lab</optiton>
+                            <option value="Corcanoe">Corcanoe</option>
+                            <option value="Gemego_Ltd">Gemego_Ltd</option>
+                            <option value="SMSROBOT_LTD">SMSROBOT_LTD</option>
+                            <option value="Mirco_Bettelini">Mirco_Bettelini</option>
+                            <option value="Boreumdal_Lab">Boreumdal_Lab</option>
                             <option value="Code_Sector">Code_Sector</option>
                             <option value="RATP">RATP</option>
-                            <option value="joysoft">joysoft</optgroup>
+                            <option value="joysoft">joysoft</option>
                             <option value="Molatra">Molatra</option>
                             <option value="NyxCore">NyxCore</option>
-                            <option value="YinzCam,_Inc.">YinzCam,_Inc.</optiton>
-                            <option value="Recruit_Holdings_Co.,Ltd.">Recruit_Holdings_Co.,Ltd.</optiton>
-
+                            <option value="YinzCam,_Inc.">YinzCam,_Inc.</option>
+                            <option value="Recruit_Holdings_Co.,Ltd.">Recruit_Holdings_Co.,Ltd.</option>
                         </select>
                     </fieldset>
                      <fieldset>
@@ -183,21 +178,21 @@
                             <option value="Empty">--PLEASE SELECT--</option>
                             <option value="AI_Factory_Limited">AI_Factory_Limited</option>
                             <option value="GIOSIS_PTE._LTD.">GIOSIS_PTE._LTD.</option>
-                            <option value="JRJ_Unlimited">JRJ_Unlimited</optgroup>
+                            <option value="JRJ_Unlimited">JRJ_Unlimited</option>
                             <option value="SMSROBOT_LTD">SMSROBOT_LTD</option>
                             <option value="NAVER_Corp.">NAVER_Corp.</option>
-                            <option value="Corcanoe">Corcanoe</optiton>
-                            <option value="Gemego_Ltd">Gemego_Ltd</optiton>
-                            <option value="SMSROBOT_LTD">SMSROBOT_LTD</optiton>
-                            <option value="Mirco_Bettelini">Mirco_Bettelini</optiton>
-                            <option value="Boreumdal_Lab">Boreumdal_Lab</optiton>
+                            <option value="Corcanoe">Corcanoe</option>
+                            <option value="Gemego_Ltd">Gemego_Ltd</option>
+                            <option value="SMSROBOT_LTD">SMSROBOT_LTD</option>
+                            <option value="Mirco_Bettelini">Mirco_Bettelini</option>
+                            <option value="Boreumdal_Lab">Boreumdal_Lab</option>
                             <option value="Code_Sector">Code_Sector</option>
                             <option value="RATP">RATP</option>
-                            <option value="joysoft">joysoft</optgroup>
+                            <option value="joysoft">joysoft</option>
                             <option value="Molatra">Molatra</option>
                             <option value="NyxCore">NyxCore</option>
-                            <option value="YinzCam,_Inc.">YinzCam,_Inc.</optiton>
-                            <option value="Recruit_Holdings_Co.,Ltd.">Recruit_Holdings_Co.,Ltd.</optiton>
+                            <option value="YinzCam,_Inc.">YinzCam,_Inc.</option>
+                            <option value="Recruit_Holdings_Co.,Ltd.">Recruit_Holdings_Co.,Ltd.</option>
                         </select>
                     </fieldset>
 
@@ -221,6 +216,12 @@
                             } %>
                         </select>
                     </fieldset>
+                    <fieldset>
+                        <label class="badge">Text Filter</label>
+                        <input type="text" class="form-control" id="text" name="text" value="<%= query.text %>"
+                               placeholder="Text Filter">
+                    </fieldset>
+                
                 </div>
             </div>
             <div class="row">
@@ -311,9 +312,9 @@
         let htmlCmp2 = "";
         let sPageURL = decodeURIComponent(window.location.search.substring(1));
         sURLVariables = sPageURL.split('&');
-        if(sURLVariables.length > 4){
-            var devOptionOne = sURLVariables[4].split('=')[1].toString();
-            var devOptionTwo = sURLVariables[5].split('=')[1].toString();
+        if(sURLVariables.length > 3){
+            var devOptionOne = sURLVariables[3].split('=')[1].toString();
+            var devOptionTwo = sURLVariables[4].split('=')[1].toString();
             if(devOptionOne != devOptionTwo){
                 htmlCmp1 += '</span>';
                 htmlCmp1 += '<span style="font-size: 18px; font-weight: bold;">'+devOptionOne+'</span>';
