@@ -170,8 +170,8 @@ function loadImages(_page) { //loadSearchPage
 function getDevOption(){ 
     let sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&');
-    devOption[0] = sURLVariables[4].split('=')[1];
-    devOption[1] = sURLVariables[5].split('=')[1];
+    devOption[0] = sURLVariables[3].split('=')[1];
+    devOption[1] = sURLVariables[4].split('=')[1];
     return devOption
 }
 
