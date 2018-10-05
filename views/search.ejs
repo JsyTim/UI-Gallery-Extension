@@ -84,7 +84,6 @@
         Find widgets with the following properties:<br><br>
         <form name="search" method="get" id="myform" action="/search" class="panel-body">
             <div class="row">
-
                 <div class="form-group form-inline">
                     <fieldset>
                         <label class="badge">Widget Class</label>
@@ -157,7 +156,6 @@
                                 if (key === 'appDownloads') {
                                     continue;
                                 }
-
                             if (query.sortType === key) { %>
                             <option selected value="<%= key %>"><%= value %></option>
                             <% }else { %>
@@ -166,27 +164,24 @@
                             } %>
                         </select>
                     </fieldset>
-                     <fieldset>
+                    <!--<fieldset>
                         <label class="badge">Text Filter</label>
                         <input type="text" class="form-control" id="text" name="text" value="<%= query.text %>"
                                placeholder="Text Filter">
-                    </fieldset>
+                    </fieldset>-->
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-xs-6">
-                    <div class="form-group text-center">
+              
+                    <div class="form-group text-center" style="min-width: 400px;">
                         <label class="badge">Width</label>
                         <input type="text" id="width-slider" name="width" value=""/>
                     </div>
-                </div>
-                <div class="col-md-6 col-xs-6">
-                    <div class="form-group text-center">
+          
+                    <div class="form-group text-center" style="min-width: 400px;">
                         <label class="badge">Height</label>
                         <input type="text" id="height-slider" name="height" value=""/>
                     </div>
-                </div>
-            </div>
+            
+             </div>
             <input type="hidden" name="page" value="1">
             <div class="row">
                 <div class="form-group" style="margin: 0 auto;">
@@ -285,7 +280,6 @@
         } else {
             _mainPage = 1;
         }
-
     });
 </script>
 </body>

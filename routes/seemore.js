@@ -6,30 +6,14 @@ const mongoose = require('mongoose');
 const Company = mongoose.model('Company');
 const Util = require('../util/util');
 
-//const _developer = ["All","JimRoal", "Mobile2ds", "Yoshihiro Saotome",  "Malaysia Airlines", "Allied Irish Banks, Public Limited Company", "BIT LABS LLC", "Huckleberry Games", "GK Apps", "GK Soft",  "Android Antivirus", "Cobo Dev Team", "Tour Tracker LLC"];
-const _btnTypeArr = ["All", "Button", "CheckBox", "Chronometer", "CompoundButton", "ImageButton", "ProgressBar", "RadioButton", "RatingBar", "SeekBar", "Spinner", "Switch", "ToggleButton"];
-//"EditText", "View"
+const _btnTypeArr = ["All"];
 const _sortTypeDict = {
     appDownloads: "Descending Number of Application Downloads",
     appAlpbAsc: "Descending Alphabetical Order"
 };
-const _colArr = ["All", "Red", "Yellow", "Green", "Blue", "Cyan", "Black", "White", "Lime", "Magenta"];
-const _catArr = ["All", "EDUCATION", "LIFESTYLE", "ENTERTAINMENT", "MUSIC_AND_AUDIO", "TOOLS", "PERSONALIZATION", "TRAVEL_AND_LOCAL", "NEWS_AND_MAGAZINES", "BOOKS_AND_REFERENCE", "BUSINESS", "FINANCE", "GAME_CASUAL", "SPORTS", "GAME_PUZZLE", "PRODUCTIVITY", "PHOTOGRAPHY", "HEALTH_AND_FITNESS", "TRANSPORTATION", "COMMUNICATION", "GAME_EDUCATIONAL", "SOCIAL", "MEDIA_AND_VIDEO", "SHOPPING", "GAME_ARCADE", "GAME_SIMULATION", "GAME_ACTION", "MEDICAL", "GAME_CARD", "WEATHER", "GAME_RACING", "GAME_BOARD", "GAME_SPORTS", "GAME_CASINO", "GAME_WORD", "GAME_TRIVIA", "GAME_ADVENTURE", "GAME_STRATEGY", "GAME_ROLE_PLAYING", "GAME_MUSIC", "LIBRARIES_AND_DEMO", "COMICS"];
-const displayPerPage = 1001; 
-
-/* GET compare pageff */
-router.get('/', function (req, res, next) {
-    res.render('compare', {
-        title: 'MobDile UI Gallery - Compare',
-        url: req.originalUrl,
-        //developer:_developer,
-        btnTypeArr: _btnTypeArr,
-        sortTypeDict: _sortTypeDict,
-        colArr: _colArr,
-        catArr: _catArr,
-        query: req.query,
-    });
-});
+const _colArr = ["All"];
+const _catArr = ["All"];
+const displayPerPage = 1001;
 
 router.post('/', function (req, res, next) {
     if (!Util.isPositiveInteger(req.body.page) && req.body.page) {
@@ -43,11 +27,7 @@ router.post('/', function (req, res, next) {
             // findObj.widget_class = req.body.btnType;
         }
         if (req.body.color !== 'All') {
-
             findObj.color = req.body.color;
-        }
-        if (req.body.developer !== 'All') {
-            findObj.developer = req.body.developer;
         }
         if (req.body.category !== 'All') {
             findObj.category = req.body.category;
@@ -55,7 +35,6 @@ router.post('/', function (req, res, next) {
         if (req.body.text !== '') {
             findObj.text = new RegExp(req.body.text);
         }
-
         // Checking and parsing of width and height
         let _widthArr = req.body.width.split(';').slice(0, 2);
         if (_widthArr.every(function (value) {
@@ -102,11 +81,19 @@ router.post('/', function (req, res, next) {
                 res.json(doc);
             });
     }
-
 });
-/* GET home page. */
+
+/* GET seemore pageff */
 router.get('/', function (req, res, next) {
-    res.render('compare', {title: 'Mobile UI Gallery - Compare'});
+    res.render('seemore', {
+        title: 'Mobile UI Gallery - Seemore for widgets',
+        url: req.originalUrl,
+        btnTypeArr: _btnTypeArr,
+        sortTypeDict: _sortTypeDict,
+        colArr: _colArr,
+        catArr: _catArr,
+        query: req.query,
+    });
 });
 
 module.exports = router;

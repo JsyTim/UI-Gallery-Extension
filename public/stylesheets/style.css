@@ -17,6 +17,12 @@ html {
     box-sizing: inherit;
 }
 
+#center{ 
+    margin-right: auto;
+    margin-left: auto;
+    vertical-align:middle;
+}
+
 .app-detail {
     color: #D3D3D3;
 }
@@ -268,4 +274,16 @@ background-color:rgba(0,0,0,0.9);
     display:block;
     width:80%;
     max-width:700px;
+}
+
+#cmpOneButton{
+    overflow: hidden;
+}
+
+#cmpOneChronometer{
+    overflow: hidden;
+}
+
+#compare-grid{
+    z-index:3
 }
