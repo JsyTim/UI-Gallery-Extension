@@ -62,7 +62,7 @@
 	    html += '<div id="highlight-box">';
 	    html += '</div>'
 		html += '<a href="./search/'+ sURLVariables[6]+ '/' + sURLVariables[3] + '">';
-		html += '<img class = "image--large" src="https://storage.googleapis.com/ui-collection-gcs/' + sURLVariables[2] + '" style="max-height:640px;"/></a>';
+		html += '<img class = "image--large" src="https://storage.googleapis.com/ui-collection/' + sURLVariables[2] + '" style="max-height:640px;"/></a>';
 		html +=	'</div>';
 		html += '<div class="col-md-6 align-self-center;">';
 		html += '<table cellpadding="15" cellspacing="0" border="0" class="app-detail ">';
@@ -125,7 +125,7 @@
 		var widRes = [];
 		coordRes = sURLVariables[10].split(',');
 		widRes = sURLVariables[12].split('x');
-		let imageUrl = 'https://storage.googleapis.com/ui-collection-gcs/' + sURLVariables[2];
+		let imageUrl = 'https://storage.googleapis.com/ui-collection/' + sURLVariables[2];
 		getMeta(imageUrl, $(".container"), coordRes, widRes);
 		}
 	
