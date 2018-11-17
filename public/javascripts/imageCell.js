@@ -144,7 +144,7 @@ function loadImages(_page) { //loadSearchPage
                 html += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; //图片的边框，假如边框高度太小，会导致图片溢出，下一层图片按照边框排列，则最后造成图片重叠
                 html += '<div>'
                 html += '<a href="#expand-jump-' + j + ' " >';
-                html += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mywidgets/' + heightWithName[j][1] + '.png" style="height:max-height:100px" />';
+                html += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mywidgets/' + heightWithName[j][1] + '.png" style="height:max-height:100px" />';
                 html += '</div>';
                 html += '</div>'; 
                 var i = heightWithName[j][2];
@@ -219,7 +219,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlButtonOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; //图片的边框，假如边框高度太小，会导致图片溢出，下一层图片按照边框排列，则最后造成图片重叠
                             htmlButtonOne += '<div>';
                             htmlButtonOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlButtonOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlButtonOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlButtonOne += '</div>';
                             htmlButtonOne += '</article>'; 
                         }else if(className === "CheckBox"){
@@ -228,7 +228,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlCheckBoxOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlCheckBoxOne += '<div>';
                             htmlCheckBoxOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlCheckBoxOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlCheckBoxOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlCheckBoxOne += '</div>';
                             htmlCheckBoxOne += '</article>'; 
                         }else if(className === "Chronometer"){
@@ -237,7 +237,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlChronometerOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlChronometerOne += '<div>';
                             htmlChronometerOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlChronometerOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlChronometerOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlChronometerOne += '</div>';
                             htmlChronometerOne += '</article>'; 
                         }else if(className === "CompoundButton"){
@@ -246,7 +246,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlCompoundButtonOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlCompoundButtonOne += '<div>';
                             htmlCompoundButtonOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlCompoundButtonOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlCompoundButtonOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlCompoundButtonOne += '</div>';
                             htmlCompoundButtonOne += '</article>'; 
                         }else if(className === "ImageButton"){
@@ -255,7 +255,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlImageButtonOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlImageButtonOne += '<div>';
                             htmlImageButtonOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlImageButtonOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlImageButtonOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlImageButtonOne += '</div>';
                             htmlImageButtonOne += '</article>'; 
                         }else if(className === "ProgressBar"){
@@ -264,7 +264,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlProgressBarOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlProgressBarOne += '<div>';
                             htmlProgressBarOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlProgressBarOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlProgressBarOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlProgressBarOne += '</div>';
                             htmlProgressBarOne += '</article>'; 
                         }else if(className === "RadioButton"){
@@ -273,7 +273,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlRadioButtonOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlRadioButtonOne += '<div>';
                             htmlRadioButtonOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlRadioButtonOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlRadioButtonOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlRadioButtonOne += '</div>';
                             htmlRadioButtonOne += '</article>'; 
                         }else if(className === "RatingBar"){
@@ -282,7 +282,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlRatingBarOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlRatingBarOne += '<div>';
                             htmlRatingBarOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlRatingBarOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlRatingBarOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlRatingBarOne += '</div>';
                             htmlRatingBarOne += '</article>'; 
                         }else if(className === "SeekBar"){
@@ -291,7 +291,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlSeekBarOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlSeekBarOne += '<div>';
                             htmlSeekBarOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlSeekBarOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlSeekBarOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlSeekBarOne += '</div>';
                             htmlSeekBarOne += '</article>'; 
                         }else if(className === "Spinner"){
@@ -300,7 +300,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlSpinnerOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlSpinnerOne += '<div>';
                             htmlSpinnerOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlSpinnerOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlSpinnerOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlSpinnerOne += '</div>';
                             htmlSpinnerOne += '</article>'; 
                         }else if(className === "Switch"){
@@ -309,7 +309,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlSwitchOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlSwitchOne += '<div>';
                             htmlSwitchOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlSwitchOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlSwitchOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlSwitchOne += '</div>';
                             htmlSwitchOne += '</article>'; 
                         }else if(className === "ToggleButton"){
@@ -318,7 +318,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlToggleButtonOne += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlToggleButtonOne += '<div>';
                             htmlToggleButtonOne += '<a href="#expand-jump-' + j + ' " >';
-                            htmlToggleButtonOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlToggleButtonOne += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlToggleButtonOne += '</div>';
                             htmlToggleButtonOne += '</article>'; 
                         }else{
@@ -333,7 +333,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlButtonTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; //图片的边框，假如边框高度太小，会导致图片溢出，下一层图片按照边框排列，则最后造成图片重叠
                             htmlButtonTwo += '<div>';
                             htmlButtonTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlButtonTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlButtonTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlButtonTwo += '</div>';
                             htmlButtonTwo += '</article>'; 
                         }else if(className === "CheckBox"){
@@ -342,7 +342,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlCheckBoxTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlCheckBoxTwo += '<div>';
                             htmlCheckBoxTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlCheckBoxTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlCheckBoxTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlCheckBoxTwo += '</div>';
                             htmlCheckBoxTwo += '</article>'; 
                         }else if(className === "Chronometer"){
@@ -351,7 +351,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlChronometerTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlChronometerTwo += '<div>';
                             htmlChronometerTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlChronometerTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlChronometerTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlChronometerTwo += '</div>';
                             htmlChronometerTwo += '</article>'; 
                         }else if(className === "CompoundButton"){
@@ -360,7 +360,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlCompoundButtonTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlCompoundButtonTwo += '<div>';
                             htmlCompoundButtonTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlCompoundButtonTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlCompoundButtonTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlCompoundButtonTwo += '</div>';
                             htmlCompoundButtonTwo += '</article>'; 
                         }else if(className === "ImageButton"){
@@ -369,7 +369,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlImageButtonTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlImageButtonTwo += '<div>';
                             htmlImageButtonTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlImageButtonTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlImageButtonTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlImageButtonTwo += '</div>';
                             htmlImageButtonTwo += '</article>'; 
                         }else if(className === "ProgressBar"){
@@ -378,7 +378,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlProgressBarTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlProgressBarTwo += '<div>';
                             htmlProgressBarTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlProgressBarTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlProgressBarTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlProgressBarTwo += '</div>';
                             htmlProgressBarTwo += '</article>'; 
                         }else if(className === "RadioButton"){
@@ -387,7 +387,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlRadioButtonTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlRadioButtonTwo += '<div>';
                             htmlRadioButtonTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlRadioButtonTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlRadioButtonTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlRadioButtonTwo += '</div>';
                             htmlRadioButtonTwo += '</article>'; 
                         }else if(className === "RatingBar"){
@@ -396,7 +396,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlRatingBarTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlRatingBarTwo += '<div>';
                             htmlRatingBarTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlRatingBarTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlRatingBarTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlRatingBarTwo += '</div>';
                             htmlRatingBarTwo += '</article>'; 
                         }else if(className === "SeekBar"){
@@ -405,7 +405,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlSeekBarTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlSeekBarTwo += '<div>';
                             htmlSeekBarTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlSeekBarTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlSeekBarTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlSeekBarTwo += '</div>';
                             htmlSeekBarTwo += '</article>'; 
                         }else if(className === "Spinner"){
@@ -414,7 +414,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlSpinnerTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlSpinnerTwo += '<div>';
                             htmlSpinnerTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlSpinnerTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlSpinnerTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlSpinnerTwo += '</div>';
                             htmlSpinnerTwo += '</article>'; 
                         }else if(className === "Switch"){
@@ -423,7 +423,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlSwitchTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlSwitchTwo += '<div>';
                             htmlSwitchTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlSwitchTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlSwitchTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlSwitchTwo += '</div>';
                             htmlSwitchTwo += '</article>'; 
                         }else if(className === "ToggleButton"){
@@ -432,7 +432,7 @@ function loadCmpImages(_page) { //loadComparePage
                             htmlToggleButtonTwo += '<div class="image--basic" style="height:auto; margin-bottom:15px">'; 
                             htmlToggleButtonTwo += '<div>';
                             htmlToggleButtonTwo += '<a href="#expand-jump-' + j + ' " >';
-                            htmlToggleButtonTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
+                            htmlToggleButtonTwo += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + className + '/' + heightWithName[j][1] + '.png"/>';
                             htmlToggleButtonTwo += '</div>';
                             htmlToggleButtonTwo += '</article>'; 
                         }else{
@@ -526,7 +526,7 @@ function loadSeeMoreImages(_page){
                         html += '<div class="image--basic" style="height:auto; margin-bottom:15px">';                               
                         html += '<div>'
                         html += '<a href="#expand-jump-' + j + ' " >';
-                        html += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection-gcs/Mycompany/' + sURLVariables[5] +'/' + heightWithName[j][1] + '.png"/>';
+                        html += '<img class="basic__img" src="https://storage.googleapis.com/ui-collection/Mycompany/' + sURLVariables[5] +'/' + heightWithName[j][1] + '.png"/>';
                         html += '</div>';
                         html += '</div>'; 
                         html += '</article>';                    
